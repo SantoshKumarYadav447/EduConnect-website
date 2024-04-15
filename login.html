@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block childpage %}
+<style>
+    .form-control
+    {
+    height:50px;
+    background:#f2f2f2;
+    margin-bottom:3%;
+    }
+</style>
+<div class="text-center fs-2">
+    Student<b class="txt-mycolor2">Login <i class="fa-solid fa-key"></i></b>
+</div>
+<div class="row">
+    <div class="col-sm-6 mx-auto">
+              <form method ="post">
+                   {% csrf_token %}  <!-- class site request forvel  for security purpose -->
+                   USERNAME<input type="email" name="email" placeholder="USERNAME..."class="form-control ">
+                   PASSWORD<input type="password" name="passwd" placeholder="PASSWORD"class="form-control ">
+                   <input type="submit" value="LOGIN" class="btn bg-success ">
+              </form>
+    </div>
+</div>
+
+{% endblock %}
